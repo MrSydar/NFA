@@ -1,3 +1,10 @@
 # New Figure Algorithm 
-New greedy algorithm for TSP problem is on development state created my Denys Hromniuk in 2019.<br>
-Explanation and other information will be available later..
+New greedy algorithm for TSP problem is on development state.<br>
+Explanation and other information will be available later.. <br>
+Pros:
+- good speed
+- high flexibility (you can easily combine it with your ideas)
+Cons:
+- able to find near optimal solutions
+- didn't find optimal solutions.. yet..
+![Alt Text](https://i.imgur.com/7vM3dld.gif)
