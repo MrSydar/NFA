@@ -4,7 +4,7 @@ Explanation and other information will be available later.. <br>
 Pros:
 - good speed
 - high flexibility (you can easily combine it with your ideas)
-Cons:
 - able to find near optimal solutions
+Cons:
 - didn't find optimal solutions.. yet..
 ![Alt Text](https://i.imgur.com/7vM3dld.gif)
