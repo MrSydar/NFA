@@ -1,16 +1,15 @@
+import matplotlib.pyplot as plt
+from copy import deepcopy
+from math import ceil, floor
 from math import pow, sqrt
 from operator import itemgetter
 from sys import float_info
-from typing import List, Any
-
-import matplotlib.pyplot as plt
 from numpy import arccos, dot, pi, cross, asarray
 from numpy.linalg import norm
-from copy import deepcopy
-from math import ceil, floor
+
 
 ### import points
-def read_file_fence(filePath):
+def read_points(filePath):
     global Fence_Points
     with open(filePath) as f:
         for line in f:
@@ -267,9 +266,9 @@ def animate(time = 0.1):
     my = [Points[a[0]][1] for a in Figure]
     my.append(my[0])
     plt.cla()
-    plt.plot(xx, yy, 'go')
-    plt.plot(mx, my, 'ro', linestyle="solid", linewidth=2)
-    plt.plot(perimp[0], perimp[1], 'bo', linestyle="None")
+    plt.plot(xx, yy, 'go', markersize=3)
+    plt.plot(mx, my, 'ro', linestyle="solid", linewidth=2, markersize=3)
+    plt.plot(perimp[0], perimp[1], 'bo', linestyle="None", markersize=3)
     plt.pause(time)
 
 ### Normalize points sequence
@@ -285,11 +284,12 @@ def get_it(lis):
     if len(lis) <= 2:
         return lis
     return [lis[0],lis[-1],lis[floor(len(lis)/2)]]+get_it(lis[1:floor(len(lis)/2)])+get_it(lis[floor(len(lis)/2)+1:-1])
+
 #######################################PROGRAM##########################################################################
 
 quadrant_points, x, y, Fence_Points, Figure, distance_matrix, PL = [], [], [], [], [], [], []
 
-read_file_fence('berlin52.txt')
+read_points('tsp250.txt')
 Points = deepcopy(Fence_Points)
 
 Points_Visited = [True] * len(Points)
@@ -326,7 +326,7 @@ for i in range(len(a)):
 # NFA combined with maximum perimeter idea with different strategies of choosing perimeters sequence
 # Numbers show how perimeters were chosen
 
-# BEST RESULTS I FOUND######## berlin52 # bier127  # tsp1000 #   tsp500  #   tsp250  #
+# BEST RESULTS I FOUND ####### berlin52 # bier127  # tsp1000 #   tsp500  #   tsp250  #
 # 123456789 -> 195 243 687
 PL = get_it(PL)              #  7963.2  # 129885.4 # 27366.4  # 14469.8 #  14469.8  #
 # 123456 -> 132465
@@ -338,7 +338,7 @@ PL = get_it(PL)              #  7963.2  # 129885.4 # 27366.4  # 14469.8 #  14469
 # 123456 -> 654321
 # PL = PL[::-1]              #  9550.0  # 149537.7 # 31842.3  # 112212.9 #  17209.4  #
 # 123456 -> 123456
-# PL = PL                    #  8749.1  # 142706.6 # 30751.8  # 108992.5 # 15016.7   #
+# PL = PL                    #  8749.1  # 142706.6 # 30751.8  # 108992.5 #  15016.7  #
 
 #shuffle(PL)
 ################################END_GENERATE_SEQUENCE_ZONE##############################################################
@@ -355,10 +355,17 @@ for perim in PL[1:]:
 
     for iterator in range(len(perim)):
         pick_next()
-    animate(0.1)
+        animate(0.1)
 
 print("Route: ", [p[0] for p in Figure])
 print(len(Figure))
 print(len(Points))
 print("Length:", get_tsp_length())
+
+mx = [Points[a[0]][0] for a in Figure] + [Points[Figure[0][0]][0]]
+my = [Points[a[0]][1] for a in Figure] + [Points[Figure[0][0]][1]]
+plt.cla()
+plt.plot(mx, my, 'ro', linestyle="solid", linewidth=2, markersize=3)
+plt.pause(0.1)
+
 plt.show()

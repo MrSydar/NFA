@@ -7,7 +7,7 @@ from numpy import arccos, dot, pi, cross, asarray
 from numpy.linalg import norm
 
 ### import points
-def read_file_fence(dst, filePath):
+def read_points(dst, filePath):
     with open(filePath) as f:
         for line in f:
             dst.append([float(it) for it in line.split()])
@@ -181,13 +181,13 @@ def animate(time = 0.1):
     my = [Points[a[0]][1] for a in Figure]
     my.append(my[0])
     plt.cla()
-    plt.plot(xx, yy, 'go')
-    plt.plot(mx, my, 'ro', linestyle="solid", linewidth=2)
+    plt.plot(xx, yy, 'go', markersize=3)
+    plt.plot(mx, my, 'ro', linestyle="solid", linewidth=2, markersize=3)
     plt.pause(time)
 #######################################PROGRAM##########################################################################
 
 Points, Figure, distance_matrix = [], [], []
-read_file_fence(Points, 'berlin52.txt')
+read_points(Points, 'tsp250.txt')
 Points_Visited = [False] * len(Points)
 
 xx = [a[0] for a in Points]
@@ -206,4 +206,7 @@ print("Route: ", [p[0] for p in Figure])
 print(len(Figure))
 print(len(Points))
 print("Length:", get_tsp_length())
+
+animate(0.1)
+
 plt.show()
