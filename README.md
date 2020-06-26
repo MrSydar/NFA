@@ -30,7 +30,7 @@ To reduce complexity, there is a special matrix that stores distances between fi
 #### Example on tsp250 with three random init points:
 ![TSP250](https://i.imgur.com/6GrcIRn.gif)
 
-### Implementation of NFA with other ideas
+## Implementation of NFA with other ideas
 This algorithm is flexible enough to combine it with other different ideas. <br>
 For example, I have implemented an idea with a combination of perimeters with a minimum amount of vertexes which describe ( contain ) each other like tree rings. Then, I use NFA on vertexes from each circle in different combinations. The results are very different:
 #### Merge sort - like sequence on TSP500
