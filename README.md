@@ -22,9 +22,9 @@ To reduce complexity, there is a special matrix that stores distances between fi
 1.
 ![1](https://i.imgur.com/pY3lVba.jpg)
 2.
-![2](https://i.imgur.com/3Oeq9M7.jpg)
+![2](https://i.imgur.com/toPlWMQ.jpg)
 3.
-![3](https://i.imgur.com/toPlWMQ.jpg)
+![3](https://i.imgur.com/3Oeq9M7.jpg)
 4.
 ![4](https://i.imgur.com/w45qxQY.jpg)
 #### Example on tsp250 with three random init points:
