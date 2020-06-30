@@ -44,3 +44,7 @@ Length = 108992.5
 # Other examples:
 #### berlin52 with circles implementation:
 ![berlin52](https://i.imgur.com/Maw9co6.gif)
+
+# TODO:
+- Consider adding a 3-opt
+- Keep existing edges and distances of unjoined nodes to edges in ordered lists. Replace matrix with ordered list.
