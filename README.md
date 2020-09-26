@@ -1,7 +1,7 @@
 # New Figure Algorithm V1.0
 New greedy algorithm for symmetric (undirected) [TSP problem](https://en.wikipedia.org/wiki/Travelling_salesman_problem) is on development state.<br>
 In the repository, you can find working code written in Python and some popular TSP maps.
-#### You can use and modify my implementation if you want, but I'm going to explain the main idea, not the code. Your implementation, of course, may be different.
+#### You can use and modify my implementation if you want, but I'm going to explain the main idea, not the code. The code is a bit messed up and not written for explanation, because it's I continue improving it. Your implementation, of course, may be different.
 ## General Idea
 The main idea is to extend the cycle by merging the nearest free vertexes to the existing cycle one by one.
 Every iteration cycle is changing after a merge, so recalculation of distances between each segment of a cycle and free vertexes is needed.
